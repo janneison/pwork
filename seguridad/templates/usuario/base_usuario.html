@@ -1,0 +1,29 @@
+{% extends 'page.html' %}
+{% block widgetHeader %}
+	<i class="fa fa-cube fa-2x"></i><h3>Configuraci&oacute;n de mi perfil</h3>
+{% endblock widgetHeader %}
+{% block content %}
+    <div class="row">
+        <div class="span6">
+        	<label >Mi foto:</label>
+            <img src="{{ user.usuario.foto.url }}" alt="Imagen de {{ user.usuario.nombres }}" width="30%" height="30%" />
+            <a href="{% url 'usuario.editar_foto' %}" title="Editar mi foto"><i class="fa fa-edit fa-2x"></i></a>
+        </div>
+    </div>
+    <hr>
+     <div class="row">
+        <div class="span6">
+			<label>Mi direcci&oacute;n de correo:</label>
+            {{ user.email}}
+            <a href="{% url 'usuario.editar_email' %}" title="Editar mi email"><i class="fa fa-edit fa-2x"></i></a>
+        </div>
+    </div>
+    <hr>
+      <div class="row">
+        <div class="span6">
+			<label>Mi clave de acceso:</label>
+            *********************************
+            <a href="#" title="Editar mi email"><i class="fa fa-edit fa-2x"></i></a>
+        </div>
+    </div>
+{% endblock content %}

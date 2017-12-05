@@ -1,0 +1,32 @@
+{% extends 'page.html' %}
+
+{% block title %}Home{% endblock title %}
+{% load staticfiles %}
+{% block imports %}
+<link href="{% static 'css/pages/dashboard.css' %}" rel="stylesheet">
+{% endblock imports %}
+
+{% block widgetHeader %}
+	<i class="fa fa-home fa-2x"></i>
+	<h3>Inicio</h3>
+{% endblock widgetHeader %}
+
+{% block content %}
+<!--<div class="page-header"><h2><h2>Perfil de usuario</h2></div>-->
+   
+    <div class="row">
+    <div class="shortcuts">
+    	
+    	<a class="shortcut" href="/seguridad/trabajo/">
+    		<i class="fa fa-magic fa-3x"></i>
+    		<span class="shortcut-label">Trabajos</span>
+    	</a>
+    
+    	<a class="shortcut" href="/seguridad/trabajo/new"> 
+    		<i class="fa fa-plus fa-3x"></i>
+    		<span class="shortcut-label">Nuevo Trabajo</span>
+    	</a>    	
+    </div>	
+    </div>
+   
+{% endblock content %}

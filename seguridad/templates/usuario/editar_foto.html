@@ -1,0 +1,14 @@
+{% extends 'usuario/base_usuario.html' %}
+
+{% block title %}Editar Foto{% endblock title %}
+
+{% block content %}
+    <h2 class="page-header">Editar mi Foto</h2>
+    <form method="post" action="" enctype="multipart/form-data">
+    	Foto actual: <img src="{{ user.usuario.foto.url }}" alt="Imagen de {{ user.usuario.nombres }}" width="30%" height="30%" />
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Actualizar Foto</button>
+        <a href="{% url 'usuario.perfil' %}" class="btn btn-warning" type="submit">Cancelar</a>
+    </form>
+{% endblock content %}

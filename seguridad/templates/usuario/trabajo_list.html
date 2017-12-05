@@ -1,0 +1,32 @@
+{% extends 'page.html' %}
+
+{% block title %}Home{% endblock title %}
+{% load staticfiles %}
+{% block imports %}
+<link href="{% static 'css/pages/dashboard.css' %}" rel="stylesheet">
+{% endblock imports %}
+
+{% block widgetHeader %}
+	<i class="fa fa-home fa-2x"></i>
+	<h3>Inicio</h3>
+{% endblock widgetHeader %}
+
+{% block content %}
+<!--<div class="page-header"><h2><h2>Perfil de usuario</h2></div>-->
+   
+    <div class="row">
+    <div class="shortcuts">
+		{% for trabajo in trabajos %}
+		<div class="post">
+			<div class="date">
+				<p>Fecha: {{ trabajo.fecha}}</p>
+			</div>
+			<h1><a href="{% url 'trabajo_detail' pk=trabajo.pk %}">{{ trabajo.nombre }}</a></h1>
+			<p>{{ trabajo.descripcion|linebreaks }}</p>
+		</div>	
+	{% endfor %}	
+       	
+    </div>	
+    </div>
+   
+{% endblock content %}

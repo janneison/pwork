@@ -1,0 +1,23 @@
+{% extends 'page.html' %}
+
+{% block title %}Home{% endblock title %}
+{% load staticfiles %}
+{% block imports %}
+<link href="{% static 'css/pages/dashboard.css' %}" rel="stylesheet">
+{% endblock imports %}
+
+{% block widgetHeader %}
+	<i class="fa fa-home fa-2x"></i>
+	<h3>Inicio</h3>
+{% endblock widgetHeader %}
+
+{% block content %}
+<!--<div class="page-header"><h2><h2>Perfil de usuario</h2></div>-->
+   
+<h1>Nuevo Trabajo</h1>
+<form method="POST" class="post-form">{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="save btn btn-default">Guardar</button>
+</form>
+   
+{% endblock content %}
